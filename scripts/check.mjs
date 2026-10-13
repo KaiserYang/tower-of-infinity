@@ -40,3 +40,13 @@ const state=runtime({negotiate:false});state.anchors[1].click();assert.equal(sta
 assert(Number(state.year.textContent)>=2026);
 assert((await readFile(join(dist,'web/site.css'),'utf8')).includes('prefers-reduced-motion'));
 console.log(`PASS: ${html.length} pages, ${links} local references, legal/ad preservation, translation parity and language runtime.`);
+
+// The branch-root deployment must contain the same generated routes as dist.
+for(const locale of ['en','es'])for(const route of ['','support/','privacy/']) {
+ const relative=locale+'/'+route+'index.html';
+ assert.equal(await readFile(join(root,relative),'utf8'),await readFile(join(dist,relative),'utf8'),relative);
+}
+for(const route of ['home','support','privacy']) {
+ assert.equal(await readFile(join(root,route,'index.html'),'utf8'),await readFile(join(dist,route,'index.html'),'utf8'));
+}
+console.log('PASS: branch-root localized and legal routes match the deployment artifact.');

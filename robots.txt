@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kaiseryang.github.io/tower-of-infinity-privacy/sitemap.xml

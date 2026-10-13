@@ -68,3 +68,9 @@ The base is `/tower-of-infinity-privacy/`; nested routes have real index files a
 - [ ] Authorize push/deployment and follow the migration sequence.
 
 See `PRIVACY-REVIEW.md` for unverified processing, retention, consent, international transfers, StoreKit, recovery and inherited claims. The July 2026 policy date has not been silently replaced.
+
+## GitHub Pages publishing from a branch
+
+The build now generates en/, es/, home/, support/ and privacy/ in the repository root as well as dist/. These generated root pages, sitemap.xml, robots.txt and .nojekyll should be committed with each content change. This supports existing Pages configurations using Deploy from a branch with folder / (root), without changing GitHub settings.
+
+Run npm run build and npm test, then review and push all generated changes when authorized. A root-only push without generated nested pages causes 404 for /en/, /es/, /support/ and /privacy/. The manual Actions workflow is still an alternative that publishes dist/; use one publishing source in repository Settings → Pages. No automatic push or deployment was performed.

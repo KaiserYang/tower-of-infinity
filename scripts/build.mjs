@@ -58,3 +58,13 @@ const paths=['','home/','support/','privacy/',...['en','es'].flatMap(l=>[`${l}/`
 await writeFile(resolve(out,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${paths.map(p=>`<url><loc>${absolute(p)}</loc></url>`).join('')}</urlset>`);
 await writeFile(resolve(out,'robots.txt'),`User-agent: *\nAllow: /\nSitemap: ${absolute('sitemap.xml')}\n`);
 console.log(`Built ${paths.length} pages; ${found.size} official assets available. Legacy root ${config.rootHomepageEnabled?'replaced (migration enabled)':'preserved'}.`);
+
+// Support existing GitHub Pages deployments from the repository branch root.
+// Keep generated routes tracked alongside the homepage; dist remains the Actions artifact.
+for(const directory of ['en','es','home','support','privacy']) {
+ await cp(resolve(out,directory),resolve(root,directory),{recursive:true});
+}
+for(const filename of ['.nojekyll','robots.txt','sitemap.xml']) {
+ await cp(resolve(out,filename),resolve(root,filename));
+}
+console.log('Generated branch-root pages as well as the dist artifact.');
