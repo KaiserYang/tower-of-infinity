@@ -1,6 +1,6 @@
 # Tower of Infinity · KSR Origin
 
-Official bilingual static website, prepared for `https://kaiseryang.github.io/tower-of-infinity-privacy/`. This task does not push or deploy. The root `index.html` is now the homepage, as requested. The original Privacy Policy is preserved byte-for-byte in `privacy-original.html`; `app-ads.txt` stays unmodified.
+Official bilingual static website, prepared for `https://kaiseryang.github.io/tower-of-infinity/`. This task does not push or deploy. The root `index.html` is now the homepage, as requested. The original Privacy Policy is preserved byte-for-byte in `privacy-original.html`; `app-ads.txt` stays unmodified.
 
 ## Architecture and files
 
@@ -29,7 +29,7 @@ node scripts/check-http.mjs
 node scripts/preview.mjs
 ```
 
-On Bash use `npm run build` / `npm test`. Open `http://localhost:8000/tower-of-infinity-privacy/home/`. Preview serves `dist/` at the real configured base. Rebuild after changes. Automated checks cover routes, local links/assets/fragments, legal/ad preservation, translation parity, support email, language negotiation and storage fallback. They do not prove visual quality or legal compliance.
+On Bash use `npm run build` / `npm test`. Open `http://localhost:8000/tower-of-infinity/home/`. Preview serves `dist/` at the real configured base. Rebuild after changes. Automated checks cover routes, local links/assets/fragments, legal/ad preservation, translation parity, support email, language negotiation and storage fallback. They do not prove visual quality or legal compliance.
 
 ## Images and stores
 
@@ -43,7 +43,7 @@ Per the corrected requirement, the homepage is now at the root. The generator up
 
 The complete original policy was moved to privacy-original.html unchanged. The bilingual current policy is at /privacy/, /en/privacy/ and /es/privacy/. Footer links use the localized policies; those pages link to the original archive.
 
-Before any authorized production deployment, update store privacy links to https://kaiseryang.github.io/tower-of-infinity-privacy/privacy/ and confirm that endpoint is publicly available. The old root will now show the homepage after deployment. No store configuration or production deployment was performed by this change.
+Before any authorized production deployment, update store privacy links to https://kaiseryang.github.io/tower-of-infinity/privacy/ and confirm that endpoint is publicly available. The old root will now show the homepage after deployment. No store configuration or production deployment was performed by this change.
 
 rootHomepageEnabled is now true. Setting it false restores the original policy at the built root without modifying the archive.
 
@@ -53,7 +53,7 @@ Existing repository has no build workflow. The new `.github/workflows/pages.yml`
 
 After review and explicit authorization: push changes using normal credentials; choose GitHub Actions in repository Settings → Pages (preserve any custom domain); manually run “Build and deploy GitHub Pages” on the intended branch. It builds, tests and deploys `dist/`. Confirm root homepage, `/privacy/`, `/privacy-original.html`, localized pages, support and `app-ads.txt` after deployment. No GitHub settings were modified in this task.
 
-The base is `/tower-of-infinity-privacy/`; nested routes have real index files and `.nojekyll` is generated. `sitemap.xml` is generated; project-level `robots.txt` cannot control the domain root crawler policy, so submit the sitemap directly when needed.
+The base is `/tower-of-infinity/`; nested routes have real index files and `.nojekyll` is generated. `sitemap.xml` is generated; project-level `robots.txt` cannot control the domain root crawler policy, so submit the sitemap directly when needed.
 
 ## Before production
 
