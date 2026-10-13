@@ -1,0 +1,64 @@
+{
+  "origin": "https://kaiseryang.github.io",
+  "base": "/tower-of-infinity-privacy/",
+  "googlePlayUrl": "https://play.google.com/store/apps/details?id=com.ksrorigin.towerofinfinity",
+  "appStoreUrl": "",
+  "rootHomepageEnabled": true,
+  "assets": {
+    "hero": "loadingscreen.jpg",
+    "mascot": "slimeking_icon.png",
+    "logo": "",
+    "gallery": [
+      "challenge.jpg",
+      "move.jpg",
+      "ranks.jpg",
+      "timing.jpg",
+      "skins.jpg",
+      "rewards.jpg"
+    ],
+    "dimensions": {
+      "loadingscreen.jpg": [
+        941,
+        1672
+      ],
+      "slimeking_icon.png": [
+        238,
+        238
+      ],
+      "challenge.jpg": [
+        1206,
+        2622
+      ],
+      "move.jpg": [
+        1206,
+        2622
+      ],
+      "ranks.jpg": [
+        1206,
+        2622
+      ],
+      "timing.jpg": [
+        1206,
+        2622
+      ],
+      "skins.jpg": [
+        1206,
+        2622
+      ],
+      "rewards.jpg": [
+        1206,
+        2622
+      ]
+    },
+    "badges": {
+      "google": {
+        "en": "google-play-en.png",
+        "es": "google-play-es.png"
+      },
+      "apple": {
+        "en": "app-store-en.svg",
+        "es": "app-store-es.svg"
+      }
+    }
+  }
+}

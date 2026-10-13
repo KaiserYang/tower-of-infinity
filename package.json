@@ -1,0 +1,1 @@
+{"name":"tower-of-infinity-site","private":true,"type":"module","scripts":{"build":"node scripts/build.mjs","test":"node scripts/check.mjs","preview":"node scripts/preview.mjs"},"engines":{"node":">=20.11"}}
